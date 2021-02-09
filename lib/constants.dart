@@ -32,7 +32,11 @@ const kResultTextStyle = TextStyle(
   color: Color(0xFF24D876),
 );
 
-const kBMITextStyle = TextStyle(
+const kBMINumberStyle = TextStyle(
   fontSize: 100,
   fontWeight: FontWeight.bold,
+);
+
+const kBodyTextStyle = TextStyle(
+  fontSize: 22,
 );
