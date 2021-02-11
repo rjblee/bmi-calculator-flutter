@@ -1,8 +1,15 @@
 import 'package:bmi_calculator/reusable_card.dart';
 import 'package:flutter/material.dart';
 import 'constants.dart';
+import 'input_page.dart';
 
 class ResultsPage extends StatelessWidget {
+  ResultsPage({@required this.bmiResult, @required this.resultText, @required this.interpretation});
+
+  final String bmiResult;
+  final String resultText;
+  final String interpretation;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,6 +22,8 @@ class ResultsPage extends StatelessWidget {
         children: [
           Expanded(
             child: Container(
+              padding: EdgeInsets.all(15),
+              alignment: Alignment.bottomLeft,
               child: Text(
                 "Your Result",
                 style: kTitleTextStyle,
@@ -30,16 +39,17 @@ class ResultsPage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Text(
-                    'OVERWEIGHT',
+                    resultText.toUpperCase(),
                     style: kResultTextStyle,
                   ),
                   Text(
-                    '18.6',
-                    style: kBMITextStyle,
+                    bmiResult,
+                    style: kBMINumberStyle,
                   ),
                   Text(
-                    'You are fatass',
-                    style: kResultTextStyle,
+                    interpretation,
+                    style: kBodyTextStyle,
+                    textAlign: TextAlign.center,
                   ),
                 ],
               ),
@@ -47,17 +57,12 @@ class ResultsPage extends StatelessWidget {
           ),
           GestureDetector(
             onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) {
-                  return ResultsPage();
-                }),
-              );
+              Navigator.pop(context);
             },
             child: Container(
               child: Center(
                 child: Text(
-                  "Try Again",
+                  "TRY AGAIN",
                   style: kLargeButtonTextStyle,
                 ),
               ),
