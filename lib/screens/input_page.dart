@@ -1,13 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'icon_content.dart';
-import 'reusable_card.dart';
-import 'constants.dart';
+import '../components/icon_content.dart';
+import '../components/reusable_card.dart';
+import '../constants.dart';
 import 'results_page.dart';
-import 'round_icon_button.dart';
-import 'bottom_button.dart';
-import 'calculator_brain.dart';
+import '../components/round_icon_button.dart';
+import '../components/bottom_button.dart';
+import '../components/calculator_brain.dart';
 
 enum Gender {
   male,
